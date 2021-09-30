@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Bodegon">
+  <ClassDiagramComponents>
+    <Class name="AcumuladorPlato" package="bodegon" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="cantidad" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Plato" name="plato"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getCantidad" returnType="int" visibility="public"/>
+        <Method name="setCantidad" returnType="void" visibility="public">
+          <Argument type="int" name="cantidad"/>
+        </Method>
+        <Method name="sumarCantidad" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Administrador" package="bodegon" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="usuario"/>
+          <Argument type="String" name="password"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="proceder" returnType="boolean" visibility="public"/>
+        <Method name="agregarBebida" returnType="Plato" visibility="public"/>
+        <Method name="agregarEmpleado" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Camarero" package="bodegon" visibility="public" xPosition="684.0" yPosition="374.0">
+      <Fields>
+        <Field name="pedidos" type="ArrayList&lt;Orden&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="usuario"/>
+          <Argument type="String" name="password"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getPedidos" returnType="ArrayList&lt;Orden&gt;" visibility="public"/>
+        <Method name="setPedidos" returnType="void" visibility="public">
+          <Argument type="ArrayList&lt;Orden&gt;" name="pedidos"/>
+        </Method>
+        <Method name="agregarPedido" returnType="void" visibility="public">
+          <Argument type="Orden" name="orden"/>
+        </Method>
+        <Method name="vaciarPedidos" returnType="void" visibility="public"/>
+        <Method name="proceder" returnType="boolean" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Cocinero" package="bodegon" visibility="public" xPosition="727.0" yPosition="48.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="usuario"/>
+          <Argument type="String" name="password"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="proceder" returnType="boolean" visibility="public"/>
+        <Method name="crearPlato" returnType="Plato" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Main" package="bodegon" visibility="public" xPosition="1114.0" yPosition="48.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Menu" package="bodegon" visibility="public" xPosition="1220.0" yPosition="930.0">
+      <Fields>
+        <Field name="menu" type="Menu" visibility="private" isStatic="true"/>
+        <Field name="platos" type="ArrayList&lt;Plato&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="private"/>
+      </Constructors>
+      <Methods>
+        <Method name="getInstance" returnType="Menu" visibility="public" isStatic="true"/>
+        <Method name="obtenerListadoPlatos" returnType="String" visibility="public"/>
+        <Method name="obtenerListadoPlatosConPrecio" returnType="String" visibility="public"/>
+        <Method name="setPlato" returnType="void" visibility="public">
+          <Argument type="ArrayList&lt;Plato&gt;" name="platos"/>
+        </Method>
+        <Method name="getPlatos" returnType="ArrayList&lt;Plato&gt;" visibility="public"/>
+        <Method name="obtenerCantidadPlatos" returnType="int" visibility="public"/>
+        <Method name="eliminarPlato" returnType="void" visibility="public">
+          <Argument type="int" name="i"/>
+        </Method>
+        <Method name="agregar" returnType="void" visibility="package">
+          <Argument type="Plato" name="p"/>
+        </Method>
+        <Method name="getMenu" returnType="Menu" visibility="public" isStatic="true"/>
+        <Method name="setMenu" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Menu" name="menu"/>
+        </Method>
+        <Method name="modificarPrecioPorId" returnType="void" visibility="public">
+          <Argument type="int" name="posicion"/>
+          <Argument type="String" name="precio"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Orden" package="bodegon" visibility="public" xPosition="1375.0" yPosition="204.0">
+      <Fields>
+        <Field name="pedidos" type="ArrayList&lt;Plato&gt;" visibility="private"/>
+        <Field name="mesa" type="Integer" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getPedidos" returnType="ArrayList&lt;Plato&gt;" visibility="public"/>
+        <Method name="agregarPedido" returnType="void" visibility="public">
+          <Argument type="Plato" name="plato"/>
+        </Method>
+        <Method name="setPedidos" returnType="void" visibility="public">
+          <Argument type="ArrayList&lt;Plato&gt;" name="pedidos"/>
+        </Method>
+        <Method name="getMesa" returnType="Integer" visibility="public"/>
+        <Method name="setMesa" returnType="void" visibility="public">
+          <Argument type="Integer" name="mesa"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Persona" package="bodegon" visibility="public" isAbstract="true" xPosition="1411.0" yPosition="562.0">
+      <Fields>
+        <Field name="usuario" type="String" visibility="private" isFinal="true"/>
+        <Field name="password" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="usuario"/>
+          <Argument type="String" name="password"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getUsuario" returnType="String" visibility="public"/>
+        <Method name="getPassword" returnType="String" visibility="public"/>
+        <Method name="setPassword" returnType="void" visibility="public">
+          <Argument type="String" name="password"/>
+        </Method>
+        <Method name="proceder" returnType="boolean" visibility="public" isAbstract="true"/>
+      </Methods>
+    </Class>
+    <Class name="Plato" package="bodegon" visibility="public" xPosition="54.0" yPosition="411.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="detalle" type="String" visibility="private"/>
+        <Field name="precio" type="float" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="detalle"/>
+          <Argument type="String" name="precio"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getDetalle" returnType="String" visibility="public"/>
+        <Method name="setDetalle" returnType="void" visibility="public">
+          <Argument type="String" name="detalle"/>
+        </Method>
+        <Method name="getPrecio" returnType="float" visibility="public"/>
+        <Method name="setPrecio" returnType="void" visibility="public">
+          <Argument type="String" name="precio"/>
+        </Method>
+        <Method name="setPrecio" returnType="void" visibility="public">
+          <Argument type="float" name="precio"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Sistema" package="bodegon" visibility="public" xPosition="277.0" yPosition="1034.0">
+      <Fields>
+        <Field name="sistema" type="Sistema" visibility="private" isStatic="true"/>
+        <Field name="menu" type="Menu" visibility="private"/>
+        <Field name="personas" type="List&lt;Persona&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="private"/>
+      </Constructors>
+      <Methods>
+        <Method name="getInstance" returnType="Sistema" visibility="public" isStatic="true"/>
+        <Method name="deSerializar" returnType="void" visibility="public">
+          <Argument type="String" name="archivo"/>
+        </Method>
+        <Method name="serializar" returnType="void" visibility="public">
+          <Argument type="String" name="archivo"/>
+        </Method>
+        <Method name="getSb" returnType="Menu" visibility="public"/>
+        <Method name="setMenu" returnType="void" visibility="public">
+          <Argument type="Menu" name="sb"/>
+        </Method>
+        <Method name="getPersonas" returnType="List&lt;Persona&gt;" visibility="public"/>
+        <Method name="setPersonas" returnType="void" visibility="public">
+          <Argument type="List&lt;Persona&gt;" name="personas"/>
+        </Method>
+        <Method name="arrancar" returnType="void" visibility="public"/>
+        <Method name="inicializacion" returnType="void" visibility="public"/>
+        <Method name="agregarCamarero" returnType="void" visibility="public">
+          <Argument type="Camarero" name="camarero"/>
+        </Method>
+        <Method name="agregarEmpleado" returnType="void" visibility="public">
+          <Argument type="Persona" name="p"/>
+        </Method>
+        <Method name="agregarCocinero" returnType="void" visibility="public">
+          <Argument type="Cocinero" name="cocinero"/>
+        </Method>
+        <Method name="mostrarInformarcionAlFinalizar" returnType="void" visibility="public"/>
+        <Method name="mostrarPlatoYBebidaMasPedidos" returnType="void" visibility="public">
+          <Argument type="ArrayList&lt;AcumuladorPlato&gt;" name="acumuladorPlatos"/>
+        </Method>
+        <Method name="vaciarVentasDelDia" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="bodegon.Menu" target="bodegon.Menu" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="bodegon.Camarero" target="bodegon.Persona"/>
+    <HasRelation name="pedidos" source="bodegon.Camarero" target="bodegon.Orden" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Orden&gt;"/>
+    <HasRelation name="personas" source="bodegon.Sistema" target="bodegon.Persona" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Persona&gt;"/>
+    <UseRelation source="bodegon.Cocinero" target="bodegon.Plato" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="bodegon.Sistema" target="bodegon.Camarero" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="menu" source="bodegon.Menu" target="bodegon.Menu" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="sistema" source="bodegon.Sistema" target="bodegon.Sistema" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="bodegon.AcumuladorPlato" target="bodegon.Plato"/>
+    <UseRelation source="bodegon.Orden" target="bodegon.Plato" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="bodegon.Camarero" target="bodegon.Orden" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="menu" source="bodegon.Sistema" target="bodegon.Menu" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="bodegon.Sistema" target="bodegon.Menu" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="bodegon.Sistema" target="bodegon.Sistema" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="bodegon.Sistema" target="bodegon.Plato" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="bodegon.Administrador" target="bodegon.Plato" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="bodegon.Sistema" target="bodegon.Persona" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="platos" source="bodegon.Menu" target="bodegon.Plato" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Plato&gt;"/>
+    <IsRelation name="is" source="bodegon.Cocinero" target="bodegon.Persona"/>
+    <HasRelation name="pedidos" source="bodegon.Orden" target="bodegon.Plato" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Plato&gt;"/>
+    <IsRelation name="is" source="bodegon.Administrador" target="bodegon.Persona"/>
+    <UseRelation source="bodegon.Sistema" target="bodegon.Cocinero" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="bodegon.Menu" target="bodegon.Plato" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
